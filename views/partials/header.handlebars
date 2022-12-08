@@ -1,0 +1,34 @@
+<header>
+    <h1>TODO</h1>
+    
+    <nav>
+        <ul>
+            {{#if user}}
+            <li>
+                <a href="/">Todo</a>
+            </li>
+            {{/if}}
+            <li>
+                <a href="/apropos">À propos</a>
+            </li>
+            <li>
+                <a href="/contact">Contact</a>
+            </li>
+            {{#unless user}}
+            <li>
+                <a href="/inscription">Inscription</a>
+            </li>
+            <li>
+                <a href="/connexion">Connexion</a>
+            </li>
+            {{/unless}}
+            {{#if user}}
+            <li>
+                <form method="post" action="/deconnexion">
+                    <input type="submit" value="Déconnexion">
+                </form>
+            </li>
+            {{/if}}
+        </ul>
+    </nav>
+</header>
